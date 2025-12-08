@@ -1,9 +1,12 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:coder_note/controller/add.dart';
 import 'package:coder_note/controller/update.dart';
 import 'package:coder_note/widgets/text.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 
 class NoteAddEditScreen extends StatefulWidget {
   const NoteAddEditScreen({
@@ -22,6 +25,17 @@ class NoteAddEditScreen extends StatefulWidget {
 
 class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
   TextEditingController noteC = TextEditingController();
+  TextEditingController noteG = TextEditingController();
+  //String currentTime = "";
+
+  DateTime now = DateTime.now();
+  late String formattedTime = DateFormat("MMMM d  hh:mm a").format(now);
+
+   print(formattedTime) {
+     // TODO: implement print
+     throw UnimplementedError();
+   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +72,7 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
         padding: EdgeInsets.all(15),
         children: [
           TextField(
-            controller: noteC,
+            controller: noteG,
             maxLines: 1,
 
             decoration: InputDecoration(
@@ -75,12 +89,17 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
               ),
             ),
           ),
+         Text(
+             formattedTime,style: TextStyle(fontSize: 15),
+         ),
+         // DateTime now = DateTime.now();
+
           TextField(
             controller: noteC,
             maxLines: 30,
 
             decoration: InputDecoration(
-              hintText: "Add Note",
+              hintText: "Start typing",
 
               border: OutlineInputBorder(
                 borderSide: BorderSide.none,
