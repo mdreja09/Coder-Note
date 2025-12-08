@@ -27,7 +27,7 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
   TextEditingController noteC = TextEditingController();
   TextEditingController noteG = TextEditingController();
   //String currentTime = "";
-
+ // Real time add
   DateTime now = DateTime.now();
   late String formattedTime = DateFormat("MMMM d  hh:mm a").format(now);
 
@@ -89,6 +89,8 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
               ),
             ),
           ),
+
+         // Real time add
          Text(
              formattedTime,style: TextStyle(fontSize: 15),
          ),
