@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.brown.shade100,
         centerTitle: true,
         title: CustomTextWidget(title: 'Coder Note', fs: 25),
       ),
@@ -68,14 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
+        autofocus: true,
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => NoteAddEditScreen(screenType: 'Note Add'))).then((v) {
             fetchNoteData();
           });
         },
-        child: Icon(Icons.add_circle_outline_rounded),
+        child: Icon(Icons.add_box_outlined),
       ),
     );
   }
