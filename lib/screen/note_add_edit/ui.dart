@@ -25,16 +25,25 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.grey,
         title: CustomTextWidget(title: widget.screenType, fs: 25),
+          actions: [
+            Icon(Icons.check,color: Colors.white,)
+          ],
       ),
       body: ListView(
         padding: EdgeInsets.all(15),
         children: [
           TextField(
             controller: noteC,
-            maxLines: 10,
-            decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(15))),
+            maxLines: 40,
+
+
+            decoration: InputDecoration(
+
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(5))),
           ),
           ElevatedButton(
             onPressed: () async {
