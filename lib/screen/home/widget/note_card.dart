@@ -10,14 +10,15 @@ class NoteCardWidget extends StatelessWidget {
   const NoteCardWidget({super.key, required this.data, required this.onDelete, required this.onEdit});
   final Map data;
   final VoidCallback onDelete;
+
   final VoidCallback onEdit;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.greenAccent.shade200,
+      color: Colors.grey.shade50,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
