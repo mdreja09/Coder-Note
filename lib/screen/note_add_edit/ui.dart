@@ -90,9 +90,9 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
             ),
           ),
 
-         // Real time add
+         ////////// Real time add ///////////
          Text(
-             formattedTime,style: TextStyle(fontSize: 15),
+             formattedTime,style: TextStyle(fontSize: 14),
          ),
          // DateTime now = DateTime.now();
 
