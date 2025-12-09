@@ -69,15 +69,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.orange,
         autofocus: true,
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => NoteAddEditScreen(screenType: 'Note Add'))).then((v) {
             fetchNoteData();
           });
         },
-        child: Icon(Icons.add_box_outlined),
+        child: Icon(Icons.add,color: Colors.white,size: 25,),
       ),
     );
   }
