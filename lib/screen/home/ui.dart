@@ -39,9 +39,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Color(0xffF0F5F9),
       appBar: AppBar(
-        backgroundColor: Colors.brown.shade100,
+        backgroundColor: Color(0xffF0F5F9),
         centerTitle: true,
-        title: CustomTextWidget(title: 'Coder Note', fs: 25),
+        title: CustomTextWidget(
+          title: 'Offline Note',
+          color: Colors.brown,
+          fw: FontWeight.w800,
+          fs: 25,
+        ),
       ),
       body: a == true
           ? Center(child: CircularProgressIndicator())
@@ -55,8 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          NoteAddEditScreen(screenType: "Note Edit", note: noteData[i]['note'], id: noteData[i]['id']),
+                      builder: (context) => NoteAddEditScreen(
+                        screenType: "Note Edit",
+                        note: noteData[i]['note'],
+                        id: noteData[i]['id'],
+                      ),
                     ),
                   ).then((c) {
                     fetchNoteData();
@@ -74,11 +82,16 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.orange,
         autofocus: true,
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => NoteAddEditScreen(screenType: 'Note Add'))).then((v) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => NoteAddEditScreen(screenType: 'Note Add'),
+            ),
+          ).then((v) {
             fetchNoteData();
           });
         },
-        child: Icon(Icons.add,color: Colors.white,size: 25,),
+        child: Icon(Icons.add, color: Colors.white, size: 25),
       ),
     );
   }
