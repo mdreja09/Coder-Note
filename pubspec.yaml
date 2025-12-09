@@ -11,6 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   intl: ^0.19.0
   cupertino_icons: ^1.0.8
 
@@ -22,10 +23,17 @@ dependencies:
 
   http: ^1.6.0
   flutter_easyloading: ^3.0.5
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.14.4"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/offline_logo.jpg"
 
   flutter_lints: ^5.0.0
 
