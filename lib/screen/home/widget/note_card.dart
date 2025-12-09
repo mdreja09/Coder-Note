@@ -25,6 +25,7 @@ class NoteCardWidget extends StatefulWidget {
 class _NoteCardWidgetState extends State<NoteCardWidget> {
   @override
   Widget build(BuildContext context) {
+
     return InkWell(
       onLongPress: () {
         showDialog(

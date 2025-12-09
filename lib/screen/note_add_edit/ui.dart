@@ -37,10 +37,18 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
 
     setState(() {});
   }
+ @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    noteC.text = widget.note ?? "";
+
+  }
 
   @override
+
   Widget build(BuildContext context) {
-    //noteC.text = widget.note ?? "";
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
