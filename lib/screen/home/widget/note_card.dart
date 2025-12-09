@@ -55,15 +55,7 @@ class _NoteCardWidgetState extends State<NoteCardWidget> {
 
                 // problem is here no Delete card
                 InkWell(
-                  onTap: () {
-                    log("message");
-                    widget.onDelete;
-                    setState(() {
-
-                    });
-
-
-                    },
+                  onTap: widget.onDelete,
                   child: Text(
                     "Confirm",
                     style: TextStyle(

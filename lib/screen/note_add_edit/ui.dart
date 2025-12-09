@@ -7,7 +7,6 @@ import 'package:coder_note/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class NoteAddEditScreen extends StatefulWidget {
   const NoteAddEditScreen({
     super.key,
@@ -27,20 +26,21 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
   TextEditingController noteC = TextEditingController();
   TextEditingController noteG = TextEditingController();
   //String currentTime = "";
- // Real time add
+  // Real time add
   DateTime now = DateTime.now();
-  late String formattedTime = DateFormat("MMMM d  hh:mm a").format(now);
+  String formattedTime = DateFormat("MMMM d  hh:mm a").format(DateTime.now());
 
-   print(formattedTime) {
-     // TODO: implement print
-     throw UnimplementedError();
-   }
+  int Count = 0;
 
+  characterCount() {
+    Count = noteC.text.length;
+
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
-    noteC.text = widget.note ?? "";
-    log("======${widget.id}=======");
+    //noteC.text = widget.note ?? "";
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -90,13 +90,19 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
             ),
           ),
 
-         ////////// Real time add ///////////
-         Text(
-             formattedTime,style: TextStyle(fontSize: 14),
-         ),
-         // DateTime now = DateTime.now();
+          ////////// Real time add ///////////
+          Row(
+            children: [
+              Text(formattedTime, style: TextStyle(fontSize: 14)),
+              Text(" | ${Count} character"),
+            ],
+          ),
 
+          // DateTime now = DateTime.now();
           TextField(
+            onChanged: (v) {
+              characterCount();
+            },
             controller: noteC,
             maxLines: 30,
 
