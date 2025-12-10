@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:coder_note/controller/add.dart';
-import 'package:coder_note/controller/update.dart';
-import 'package:coder_note/widgets/text.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import '../../controller/add.dart';
+import '../../controller/update.dart';
+import '../../widgets/text.dart';
 
 class NoteAddEditScreen extends StatefulWidget {
   const NoteAddEditScreen({
@@ -37,7 +39,7 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
 
     setState(() {});
   }
- @override
+
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -45,9 +47,14 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
 
   }
 
+
   @override
 
   Widget build(BuildContext context) {
+
+
+
+    //noteC.text = widget.note ?? "";
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -106,6 +113,10 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
               Text(" | ${Count} character"),
             ],
           ),
+
+
+
+
 
           // DateTime now = DateTime.now();
           TextField(

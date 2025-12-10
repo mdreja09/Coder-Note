@@ -1,7 +1,6 @@
 import 'dart:developer';
 
-import 'package:coder_note/controller/delete.dart';
-import 'package:coder_note/screen/note_add_edit/ui.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../widgets/text.dart';
@@ -71,38 +70,44 @@ class _NoteCardWidgetState extends State<NoteCardWidget> {
           },
         );
       },
-      child: Card(
-        color: Colors.white,
+      child: SizedBox(
+        height: 120,
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 8,
-                child: CustomTextWidget(
-                  title: widget.data['note'],
-                  color: Colors.black,
-                  fs: 15,
-                  maxLine: 4,
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Column(
-                  spacing: 15,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    InkWell(onTap: widget.onEdit, child: Icon(Icons.edit_note)),
-                    InkWell(
-                      onTap: widget.onDelete,
-                      child: Icon(Icons.delete_forever, color: Colors.red),
+          padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 5),
+          child: Card(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 8,
+                    child: CustomTextWidget(
+                      title: widget.data['note'],
+                      color: Colors.black,
+                      fs: 15,
+                      maxLine: 7,
                     ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      spacing: 15,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        InkWell(onTap: widget.onEdit, child: Icon(Icons.edit_note)),
+                        /*InkWell(
+                          onTap: widget.onDelete,
+                          child: Icon(Icons.delete_forever, color: Colors.red),
+                        ),*/
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
