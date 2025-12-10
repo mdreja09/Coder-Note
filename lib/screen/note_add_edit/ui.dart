@@ -99,6 +99,7 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
           ),
 
           ////////// Real time add ///////////
+
           Row(
             children: [
               Text(formattedTime, style: TextStyle(fontSize: 14)),
@@ -115,11 +116,11 @@ class _NoteAddEditScreenState extends State<NoteAddEditScreen> {
             maxLines: 30,
 
             decoration: InputDecoration(
-              hintText: "Start typing",
+              hintText: " start typing",
 
               border: OutlineInputBorder(
                 borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(6),
               ),
             ),
           ),
