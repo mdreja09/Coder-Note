@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../json_app/screen/home/ui.dart';
+import 'home2.dart';
 
 
 class SplashScreen2 extends StatefulWidget {
@@ -12,7 +13,10 @@ class SplashScreen2 extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen2> {
   autoNavigate() async {
     await Future.delayed(Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+
+    Navigator.pushReplacement(
+      context,MaterialPageRoute(builder: (context) => Home2()),
+    );
   }
 
   @override
@@ -25,6 +29,8 @@ class _SplashScreenState extends State<SplashScreen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF0F5F9),
-        body: Center(child: Image.asset("assets/offline_logo.jpg")));
+
+      body: Center(child: Text("Splash Screen")),
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../home/ui.dart';
 
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -11,7 +12,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   autoNavigate() async {
     await Future.delayed(Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 
   @override
