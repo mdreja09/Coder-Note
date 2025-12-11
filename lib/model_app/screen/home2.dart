@@ -20,7 +20,7 @@ class _Home2State extends State<Home2> {
 
   @override
   void initState() {
-    fetchData;
+    fetchData ();
 
     // TODO: implement initState
     super.initState();
@@ -46,7 +46,7 @@ class _Home2State extends State<Home2> {
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
             tileColor: Colors.green,
-            title: CustomTextWidget(title: " ${list[index].id.toString()} "),
+            title: CustomTextWidget(title: " ${list[index].note.toString()} "),
             leading: CustomTextWidget(title: " ${list[index].id.toString()}"),
           ),
         ),
