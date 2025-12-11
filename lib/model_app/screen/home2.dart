@@ -1,4 +1,5 @@
 import 'package:coder_note/json_app/widgets/text.dart';
+import 'package:coder_note/model_app/model/note_model.dart';
 import 'package:flutter/material.dart';
 
 class Home2 extends StatefulWidget {
@@ -9,6 +10,7 @@ class Home2 extends StatefulWidget {
 }
 
 class _Home2State extends State<Home2> {
+  List <NoteModel> list =[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,11 +22,14 @@ class _Home2State extends State<Home2> {
       body: ListView.builder(
         itemCount: 5,
         itemBuilder: (context, index) =>
-            ListTile(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
 
-              tileColor: Colors.blue,
-              title: CustomTextWidget(title: "Data "),
-            leading: CustomTextWidget(title: "1010"),),
+                tileColor: Colors.blue,
+                title: CustomTextWidget(title: "Data "),
+              leading: CustomTextWidget(title: "1010"),),
+            ),
       ),
     );
   }
