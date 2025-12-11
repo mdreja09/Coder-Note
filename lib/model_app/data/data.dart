@@ -1,6 +1,6 @@
 import 'package:coder_note/model_app/model/note_model.dart';
 
-class data {
+class Data {
   List<NoteModel> list = [
     NoteModel(id: 1, note: "Hello CodedAngon 1", createdAt: "10 Dec 2025", updatedAt: "11 Dec 2025"),
     NoteModel(id: 2, note: "Hello CodedAngon 2", createdAt: "10 Dec 2025", updatedAt: "11 Dec 2025"),

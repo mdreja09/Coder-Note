@@ -1,4 +1,5 @@
 import 'package:coder_note/json_app/widgets/text.dart';
+import 'package:coder_note/model_app/data/data.dart';
 import 'package:coder_note/model_app/model/note_model.dart';
 import 'package:flutter/material.dart';
 
@@ -10,26 +11,45 @@ class Home2 extends StatefulWidget {
 }
 
 class _Home2State extends State<Home2> {
-  List <NoteModel> list =[];
+  List<NoteModel> list = [];
+  fetchData() async {
+    await Future.delayed(Duration(seconds: 3));
+    list = Data().list;
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    fetchData;
+
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.blue,
-        title: CustomTextWidget(title: "1010"),
-        leading: CustomTextWidget(title: "title"),
+        title: CustomTextWidget(
+          title: " Model ",
+          color: Colors.white,
+          fw: FontWeight.w800,
+          fs: 25,
+        ),
+        leading: CustomTextWidget(title: ""),
       ),
       body: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (context, index) =>
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-
-                tileColor: Colors.blue,
-                title: CustomTextWidget(title: "Data "),
-              leading: CustomTextWidget(title: "1010"),),
-            ),
+        itemCount: list.length,
+        itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListTile(
+            tileColor: Colors.green,
+            title: CustomTextWidget(title: " ${list[index].id.toString()} "),
+            leading: CustomTextWidget(title: " ${list[index].id.toString()}"),
+          ),
+        ),
       ),
     );
   }
