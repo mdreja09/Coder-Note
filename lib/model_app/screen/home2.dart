@@ -41,11 +41,12 @@ class _Home2State extends State<Home2> {
         leading: CustomTextWidget(title: ""),
       ),
       body: ListView.builder(
+
         itemCount: list.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListTile(
-            tileColor: Colors.green,
+            tileColor: Colors.blue,
             title: CustomTextWidget(title: " ${list[index].note.toString()} "),
             leading: CustomTextWidget(title: " ${list[index].id.toString()}"),
           ),
