@@ -8,11 +8,21 @@ class NoteModelApi {
  Future<List<NoteModel>> getData () async {
    try{
    Uri u =Uri.parse("https://appapi.coderangon.com/api/notes");
-    var a = await http.get(u);
-    if ( a.statusCode == 200 ){
-      var data = jsonDecode(a.body)["notes"];
+    var r = await http.get(u);
+    if ( r.statusCode == 200 ){
+      var data = jsonDecode(r.body)["notes"];
       for ( int i =0 ; i<data.length; i++){
         log(" ${data[i]["id"]}");
+
+        List<NoteModel> a = [];
+       var m = NoteModel(
+          id: data[i]["id"],
+          note: data[i]["note"],
+          createdAt: data[i]["created_at"],
+          updatedAt: data[i]["updated_at"]
+
+        );
+       a.add(m);
       }
     }
 
