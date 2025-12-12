@@ -2,6 +2,7 @@ import 'package:coder_note/json_app/widgets/text.dart';
 import 'package:coder_note/model_app/data/data.dart';
 import 'package:coder_note/model_app/model/note_model.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Home2 extends StatefulWidget {
   const Home2({super.key});
@@ -14,7 +15,9 @@ class _Home2State extends State<Home2> {
   List<NoteModel> list = [];
   fetchData() async {
     await Future.delayed(Duration(seconds: 3));
-    list = Data().list;
+    Uri u =Uri.parse("https://appapi.coderangon.com/api/notes");
+    var a = await http.get(u);
+   // list = Data().list;
     setState(() {});
   }
 
