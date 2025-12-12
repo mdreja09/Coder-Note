@@ -9,13 +9,22 @@ class NoteModelApi {
    try{
    Uri u =Uri.parse("https://appapi.coderangon.com/api/notes");
     var r = await http.get(u);
-    if ( r.statusCode == 200 ){
+
+
+
+
+   if ( r.statusCode == 200 ){
       var data = jsonDecode(r.body)["notes"];
+      List<NoteModel> a = [];
+
       for ( int i =0 ; i<data.length; i++){
         log(" ${data[i]["id"]}");
 
-        List<NoteModel> a = [];
+
+
+
        var m = NoteModel(
+
           id: data[i]["id"],
           note: data[i]["note"],
           createdAt: data[i]["created_at"],
@@ -23,13 +32,17 @@ class NoteModelApi {
 
         );
        a.add(m);
+
       }
+  return a;
+
     }
 
 
 
-  }catch(error){
-     log("Error : $error");
+
+  }catch(e){
+     log("Error : $e");
 
   }
    return [];

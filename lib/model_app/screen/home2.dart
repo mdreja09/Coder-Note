@@ -1,8 +1,13 @@
+import 'dart:developer';
+
 import 'package:coder_note/json_app/widgets/text.dart';
 import 'package:coder_note/model_app/data/data.dart';
 import 'package:coder_note/model_app/model/note_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import '../../json_app/controller/get.dart';
+import '../controller/get.dart';
 
 class Home2 extends StatefulWidget {
   const Home2({super.key});
@@ -13,17 +18,19 @@ class Home2 extends StatefulWidget {
 
 class _Home2State extends State<Home2> {
   List<NoteModel> list = [];
+
   fetchData() async {
     await Future.delayed(Duration(seconds: 3));
-    Uri u =Uri.parse("https://appapi.coderangon.com/api/notes");
-    var a = await http.get(u);
-   // list = Data().list;
+
+   list = await NoteModelApi().getData();
     setState(() {});
+
   }
 
   @override
   void initState() {
     fetchData ();
+
 
     // TODO: implement initState
     super.initState();
@@ -47,8 +54,9 @@ class _Home2State extends State<Home2> {
 
         itemCount: list.length,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: ListTile(
+
             tileColor: Colors.blue,
             title: CustomTextWidget(title: " ${list[index].note.toString()} "),
             leading: CustomTextWidget(title: " ${list[index].id.toString()}"),
