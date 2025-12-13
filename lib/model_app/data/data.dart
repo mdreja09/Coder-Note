@@ -7,14 +7,14 @@ class Data {
       note:
           "ListView.builder creates dynamic scrollable lists by calling itemBuilder for each index. It improves performance using lazy loading…”",
       createdAt: "10 Dec 2025",
-      updatedAt: "11 Dec 2025",
+      updatedAt: "16 Dec 2025",
     ),
     NoteModel(
       id: 2,
       note:
           "You have many ongoing subjects—Flutter, Python, Video Editing, Driving Exam, etc",
       createdAt: "10 Dec 2025",
-      updatedAt: "11 Dec 2025",
+      updatedAt: "15 Dec 2025",
     ),
     NoteModel(
       id: 3,
@@ -28,7 +28,7 @@ class Data {
       note:
           "Dynamic list বানায়। Only visible items build করে—performance ভালো।",
       createdAt: "10 Dec 2025",
-      updatedAt: "11 Dec 2025",
+      updatedAt: "12 Dec 2025",
     ),
   ];
 }
