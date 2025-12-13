@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../json_app/screen/home/ui.dart';
 import 'home2.dart';
 
-
 class SplashScreen2 extends StatefulWidget {
   const SplashScreen2({super.key});
 
@@ -15,7 +14,8 @@ class _SplashScreenState extends State<SplashScreen2> {
     await Future.delayed(Duration(seconds: 3));
 
     Navigator.pushReplacement(
-      context,MaterialPageRoute(builder: (context) => Home2()),
+      context,
+      MaterialPageRoute(builder: (context) => Home2()),
     );
   }
 
@@ -30,7 +30,12 @@ class _SplashScreenState extends State<SplashScreen2> {
     return Scaffold(
       backgroundColor: Color(0xffF0F5F9),
 
-      body: Center(child: Text("Splash Screen")),
+      body: Center(
+        child: Text(
+          " Splash Screen",
+          style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800),
+        ),
+      ),
     );
   }
 }
