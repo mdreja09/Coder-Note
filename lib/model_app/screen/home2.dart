@@ -43,10 +43,10 @@ class _Home2State extends State<Home2> {
         centerTitle: true,
         backgroundColor: Colors.blue,
         title: CustomTextWidget(
-          title: " Model ",
+          title: " Model  ",
           color: Colors.white,
           fw: FontWeight.w800,
-          fs: 25,
+          fs: 26,
         ),
         leading: CustomTextWidget(title: ""),
       ),
