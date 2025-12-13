@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:coder_note/json_app/widgets/text.dart';
 import 'package:coder_note/model_app/data/data.dart';
@@ -6,7 +6,7 @@ import 'package:coder_note/model_app/model/note_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../../json_app/controller/get.dart';
+
 import '../controller/get.dart';
 
 class Home2 extends StatefulWidget {
@@ -54,7 +54,7 @@ class _Home2State extends State<Home2> {
 
         itemCount: list.length,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(12.0),
           child: ListTile(
 
             tileColor: Colors.blue,
