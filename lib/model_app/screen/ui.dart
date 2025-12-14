@@ -32,8 +32,8 @@ class _SplashScreenState extends State<SplashScreen2> {
 
       body: Center(
         child: Text(
-          " Splash Screen",
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800),
+          "Splash Screen",
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.w800),
         ),
       ),
     );
