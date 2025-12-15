@@ -11,7 +11,7 @@ class SplashScreen2 extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen2> {
   autoNavigate() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 4));
 
     Navigator.pushReplacement(
       context,
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen2> {
       body: Center(
         child: Text(
           "Splash Screen",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.w800),
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.w700),
         ),
       ),
     );
