@@ -20,7 +20,7 @@ class _Home2State extends State<Home2> {
   List<NoteModel> list = [];
 
   fetchData() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 4));
 
    list = await NoteModelApi().getData();
     setState(() {});
